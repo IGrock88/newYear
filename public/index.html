@@ -1,0 +1,238 @@
+<!doctype html> 
+<html>
+<head>
+	<title>Поздравление с новым годом</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<script src="ParticleEngine.js"></script>
+</head>
+
+<style>
+
+div.bg {
+	min-height: 100%;
+	min-width: 1024px;
+	width: 100%;
+	height: auto;
+	position: fixed;
+	background-image: url(bg.jpg);
+	background-size: contain;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	opacity: 0.15;
+}
+
+h1 {
+	font-family: 'Lobster', cursive;
+	color: chartreuse;
+	font-size: 6vh;
+	text-align: center;
+	line-height: 95px;
+	font-weight: normal;
+	margin-top: 129px;
+	text-shadow: 5px 5px 5px #000;
+}
+
+@media screen and (max-width: 1185px) { /* Specific to this particular image */
+        div.bg {
+			background-size: cover;
+        }
+}
+
+
+
+html, body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	padding: 0;
+	margin: 0;
+	color: #333;
+}
+
+.bar {
+	background-color: #111;
+	color: #f0f0f0;
+	box-shadow: 0px 0px 2px #333;
+	line-height: 25px;
+	padding: 0px 20px;
+	opacity: 0.7;
+}
+.bar:hover {
+	opacity: 1;
+}
+.bar a {
+	color: #DDD;
+}
+.bar a:hover {
+	color: #FFFFFF;
+}
+
+a { color: #FFFFFF; text-decoration: none; }
+a:hover { color: #CCC; }
+	
+	#canvas {
+		border: 1px solid black;
+		position: absolute;
+		z-index: 0;
+	}
+	
+	#flake {
+		color: #fff;
+		position: absolute;
+		font-size: 25px;
+		top: -50px;
+		z-index: 100;
+	}
+	
+	#page {
+		position: relative;
+		z-index: 1;
+	}
+
+	#start{
+		position: relative;
+		top: 20vh;
+		z-index: 100;
+		font-size: 44px;
+	}
+
+	#body{
+		overflow: hidden;
+		position: absolute;
+		width: 100%;
+		min-height: 100%;
+		height: auto;
+		top: 0;
+		transition: all 3s;
+	}
+
+	body{
+		text-align: center;
+	}
+
+	.hide{
+		transform: scale(0);
+	}
+
+	#home{
+		position: absolute;
+		right: 0;
+		bottom: 2%;
+		z-index: 10;
+	}
+
+	#santa{
+		background-image: url(santa_sleigh_PNG10.png);
+		position: absolute;
+		transform: scale(0.09);
+		/*right: -1128px;*/
+		right: -378px;
+		bottom: -629px;
+		z-index: 11;
+	}
+
+	.hideTitle{
+		display: none;
+	}
+
+.smoke-area {
+	position: absolute;
+	width: 300px;
+	height: 150px;
+	top: 513px;
+	right: -230px;
+	z-index: 12;
+}
+
+.smoke-area .smoke {
+	position: absolute;
+	z-index: 12;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	box-shadow: 0 0 20px lightgray;
+	background: radial-gradient(ellipse at center, rgba(206,220,231,1) 33%,rgba(89,106,114,0) 100%);
+	top: 120px;
+	left: 20px;
+	-webkit-animation: smoke-move 2.3s linear infinite
+}
+
+.smoke-area .smoke:nth-child(2) {
+	-webkit-animation: smoke-move 2.5s linear infinite
+}
+
+.smoke-area .smoke:nth-child(3) {
+	-webkit-animation: smoke-move 2.7s linear infinite
+}
+
+.smoke-area .smoke:nth-child(4) {
+	-webkit-animation: smoke-move 2.2s linear infinite
+}
+
+.smoke-area .smoke:nth-child(5) {
+	-webkit-animation: smoke-move 2.1s linear infinite
+}
+
+.smoke-area .smoke:nth-child(6) {
+	-webkit-animation: smoke-move 2s linear infinite
+}
+
+.smoke-area .smoke:nth-child(7) {
+	-webkit-animation: smoke-move 2.9s linear infinite
+}
+
+@keyframes smoke-move {
+	0% {top: 120px; left: -20px}
+	20% {top: 107px; left: -25px}
+	30% {top: 95px; left: -35px; opacity: 0.9}
+	40% {top: 80px; left: -40px; }
+	50% {top: 65px; left: -50px; }
+	60% {top: 50px; left: -62px; }
+	70% {top: 35px; left: -75px; }
+	80% {top: 25px; left: -90px; }
+	90% {top: 15px; left: -117px; }
+	100% {top: 7px; left: -127px; opacity: 0; width: 90px; height: 60px}
+}
+
+#canvas{
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	background-color: transparent !important;
+	z-index: 0;
+}
+	
+</style>
+<body>
+<div id="body" class="hide">
+
+	<img src="santa_sleigh_PNG10.png" alt="" id="santa" class="hideSanta">
+	<img src="house.png"  id="home">
+	<div class="smoke-area">
+		<div class="smoke"></div>
+		<div class="smoke"></div>
+		<div class="smoke"></div>
+		<div class="smoke"></div>
+		<div class="smoke"></div>
+		<div class="smoke"></div>
+		<div class="smoke"></div>
+		<div class="smoke"></div>
+	</div>
+	<div class="bg"></div>
+
+<div id="page">
+	<h1 class="hideTitle">С Новым годом! Любимые папа Гриша и мама Аня!!! &hearts;</h1>
+</div>
+<canvas id="canvas"></canvas>
+<div id = "flake">&#10052;</div>
+</div>
+	<button id="start">Нажми сюда</button>
+
+
+<script src="js.js"></script>
+</body>
+</html>
