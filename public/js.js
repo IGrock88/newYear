@@ -138,7 +138,7 @@ function fireworks(startY) {
 // objects
     var listFire = [];
     var listFirework = [];
-    var fireNumber = 15;
+    var fireNumber = 8;
     var center = {
         x: canvas.width / 2,
         y: canvas.height / startY
@@ -268,29 +268,3 @@ setTimeout(function () {
     fireworks(3)
 },1000);
 
-//smoke
-var settings = {
-    positionStyle    : Type.CUBE,
-    positionBase     : new THREE.Vector3( 0, 0, 0 ),
-    positionSpread   : new THREE.Vector3( 0, 0, 0 ),
-
-    velocityStyle    : Type.CUBE,
-    velocityBase     : new THREE.Vector3( 0, 0, 5 ),
-    velocitySpread   : new THREE.Vector3( 2, 2, 0 ),
-    accelerationBase : new THREE.Vector3( 0,0,-1 ),
-
-    particleTexture : THREE.ImageUtils.loadTexture( 'images/smokeparticle.png'),
-
-    angleBase               : 0,
-    angleSpread             : 720,
-    angleVelocityBase       : 0,
-    angleVelocitySpread     : 1000,
-
-    sizeTween    : new Tween( [0, 1], [2, 8] ),
-    opacityTween : new Tween( [0.8, 2], [0.5, 0] ),
-    colorTween   : new Tween( [0.4, 1], [ new THREE.Vector3(0,0,0.2), new THREE.Vector3(0, 0, 0.5) ] ),
-
-    particlesPerSecond : 50,
-    particleDeathAge   : 2.0,
-    emitterDeathAge    : 60
-};

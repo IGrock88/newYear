@@ -97,7 +97,11 @@ a:hover { color: #CCC; }
 		position: relative;
 		top: 20vh;
 		z-index: 100;
-		font-size: 44px;
+		font-size: 105px;
+		border-radius: 25px;
+		border: none;
+		padding: 25px;
+		background-color: aquamarine;
 	}
 
 	#body{
@@ -123,6 +127,10 @@ a:hover { color: #CCC; }
 		right: 0;
 		bottom: 2%;
 		z-index: 10;
+		background-image: url("house.png");
+		background-size: contain;
+		width: 256px;
+		height: 256px;
 	}
 
 	#santa{
@@ -143,7 +151,7 @@ a:hover { color: #CCC; }
 	position: absolute;
 	width: 300px;
 	height: 150px;
-	top: 513px;
+	top: -94px;
 	right: -230px;
 	z-index: 12;
 }
@@ -211,7 +219,7 @@ a:hover { color: #CCC; }
 <div id="body" class="hide">
 
 	<img src="santa_sleigh_PNG10.png" alt="" id="santa" class="hideSanta">
-	<img src="house.png"  id="home">
+	<div id="home">
 	<div class="smoke-area">
 		<div class="smoke"></div>
 		<div class="smoke"></div>
@@ -221,6 +229,7 @@ a:hover { color: #CCC; }
 		<div class="smoke"></div>
 		<div class="smoke"></div>
 		<div class="smoke"></div>
+	</div>
 	</div>
 	<div class="bg"></div>
 
