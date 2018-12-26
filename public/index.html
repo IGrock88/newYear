@@ -127,19 +127,20 @@ a:hover { color: #CCC; }
 		right: 0;
 		bottom: 2%;
 		z-index: 10;
-		background-image: url("house.png");
+		background-image: url(house.png);
 		background-size: contain;
-		width: 256px;
-		height: 256px;
+		background-repeat: no-repeat;
+		width: 520px;
+		height: 520px;
 	}
 
 	#santa{
 		background-image: url(santa_sleigh_PNG10.png);
 		position: absolute;
-		transform: scale(0.09);
-		/*right: -1128px;*/
+		transform: scale(0.15);
+		/* right: -1128px; */
 		right: -378px;
-		bottom: -629px;
+		bottom: -607px;
 		z-index: 11;
 	}
 
@@ -151,22 +152,22 @@ a:hover { color: #CCC; }
 	position: absolute;
 	width: 300px;
 	height: 150px;
-	top: -94px;
-	right: -230px;
+	top: -69px;
+	right: -145px;
 	z-index: 12;
 }
 
 .smoke-area .smoke {
 	position: absolute;
 	z-index: 12;
-	width: 30px;
-	height: 30px;
+	width: 52px;
+	height: 60px;
 	border-radius: 50%;
-	box-shadow: 0 0 20px lightgray;
+	box-shadow: 0 0 20px lightgrey;
 	background: radial-gradient(ellipse at center, rgba(206,220,231,1) 33%,rgba(89,106,114,0) 100%);
 	top: 120px;
 	left: 20px;
-	-webkit-animation: smoke-move 2.3s linear infinite
+	-webkit-animation: smoke-move 2.3s linear infinite;
 }
 
 .smoke-area .smoke:nth-child(2) {
