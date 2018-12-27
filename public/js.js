@@ -18,7 +18,7 @@ $('#start').on('click', function () {
 
     var audio = $('<audio src="v_lesu_rodilas_elochka-minus.mp3" autoplay></audio>');
 
-    //$('body').append(audio);
+    $('body').append(audio);
 
     var t = setInterval(
         function(){
